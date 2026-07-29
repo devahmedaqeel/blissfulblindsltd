@@ -588,11 +588,19 @@ document.addEventListener('DOMContentLoaded', () => {
           'Flitwick',
           'Sandy',
           'Biggleswade',
-          'Kempston',
-          'Watford',
+          'Kempston'
+        ]
+      },
+      watford: {
+        center: [51.6565, -0.3903],
+        zoom: 11,
+        circle: { center: [51.6565, -0.3903], radius: 15000 },
+        title: 'Watford Service Area',
+        cities: [
+          'Watford Town Centre',
+          'South Oxhey',
           'Stanmore',
-          'Wembley',
-          'South Oxhey'
+          'Wembley'
         ]
       }
     };
@@ -614,7 +622,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = {
       peterborough: document.getElementById('tab-peterborough'),
       leicester:    document.getElementById('tab-leicester'),
-      luton:        document.getElementById('tab-luton')
+      luton:        document.getElementById('tab-luton'),
+      watford:      document.getElementById('tab-watford')
     };
 
     function renderRegion(regionKey) {
@@ -694,14 +703,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const postcodeMap = {
         peterborough: ['PE'],
         leicester:    ['LE'],
-        luton:        ['LU', 'MK', 'SG', 'WD', 'HA']
+        luton:        ['LU', 'MK', 'SG'],
+        watford:      ['WD', 'HA']
       };
 
       const checkPostcode = () => {
         const inputVal = postcodeCheckInput.value.trim().toUpperCase();
         if (!inputVal) {
           checkerResult.className = 'postcode-result error';
-          checkerResult.textContent = 'Please enter a postcode or postcode prefix (e.g. PE1, LE5, LU2).';
+          checkerResult.textContent = 'Please enter a postcode or postcode prefix (e.g. PE1, LE5, LU2, WD17).';
           return;
         }
 
