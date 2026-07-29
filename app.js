@@ -582,14 +582,17 @@ document.addEventListener('DOMContentLoaded', () => {
         cities: [
           'Luton Town Centre',
           'Dunstable',
-          'Bedford',
           'Leighton Buzzard',
           'Houghton Regis',
           'Ampthill',
           'Flitwick',
           'Sandy',
           'Biggleswade',
-          'Kempston'
+          'Kempston',
+          'Watford',
+          'Stanmore',
+          'Wembley',
+          'South Oxhey'
         ]
       }
     };
@@ -691,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const postcodeMap = {
         peterborough: ['PE'],
         leicester:    ['LE'],
-        luton:        ['LU', 'MK', 'SG']
+        luton:        ['LU', 'MK', 'SG', 'WD', 'HA']
       };
 
       const checkPostcode = () => {
