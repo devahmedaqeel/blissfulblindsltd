@@ -1003,10 +1003,6 @@ button, input, select, textarea {
     width: 100%;
     font-size: 1.25rem;
   }
-
-  .nav-order-online {
-    display: none;
-  }
 }
 
 /* .nav-container's height, the logo, and the brand text are all fluid
