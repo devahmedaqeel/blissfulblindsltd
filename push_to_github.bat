@@ -7,7 +7,7 @@ echo === Staging all changes ===
 git add -A
 echo.
 echo === Committing ===
-git commit -m "Backend Multi-Area SEO Optimization - Expanded JSON-LD Geo & areaServed schemas across Peterborough, Leicester, Luton, Bedford & Watford without front-end visual changes"
+git commit -m "Cleaned up front-end menu by removing made-to-measure-blinds navigation links while preserving page & sitemap for Google SEO indexing"
 echo.
 echo === Pushing to blissfulblindsltd (ltd) ===
 git push ltd main
