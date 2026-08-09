@@ -18,6 +18,56 @@
       "dest": "/api/index.js"
     },
     {
+      "src": "/blinds-peterborough\\.html$",
+      "status": 301,
+      "headers": { "Location": "/blinds-peterborough/" }
+    },
+    {
+      "src": "/roller-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/roller-blinds/" }
+    },
+    {
+      "src": "/vertical-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/vertical-blinds/" }
+    },
+    {
+      "src": "/venetian-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/venetian-blinds/" }
+    },
+    {
+      "src": "/roman-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/roman-blinds/" }
+    },
+    {
+      "src": "/wooden-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/wooden-blinds/" }
+    },
+    {
+      "src": "/blackout-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/blackout-blinds/" }
+    },
+    {
+      "src": "/made-to-measure-blinds\\.html$",
+      "status": 301,
+      "headers": { "Location": "/made-to-measure-blinds/" }
+    },
+    {
+      "src": "/contact\\.html$",
+      "status": 301,
+      "headers": { "Location": "/contact/" }
+    },
+    {
+      "src": "/about\\.html$",
+      "status": 301,
+      "headers": { "Location": "/about/" }
+    },
+    {
       "src": "/curtains(/.*)?$",
       "status": 301,
       "headers": { "Location": "/" }

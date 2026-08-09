@@ -7,7 +7,7 @@ echo === Staging all changes ===
 git add -A
 echo.
 echo === Committing ===
-git commit -m "Update company registration details and legal disclosures for UK compliance"
+git commit -m "SEO Optimization for Peterborough UK - Created Venetian & Made-to-Measure landing pages, updated Titles, Meta Descriptions, FAQs, Schemas, Sitemap & Vercel redirects"
 echo.
 echo === Pushing to blissfulblindsltd (ltd) ===
 git push ltd main
