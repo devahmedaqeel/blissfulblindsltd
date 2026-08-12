@@ -81,25 +81,25 @@ function walkDir(currentDir) {
         
         // 1. Replace display phone numbers
         if (content.includes('01733 853037')) {
-          content = content.replace(/01733 853037/g, '01733 853037');
+          content = content.replace(/01733 853037/g, '0800 246 5234');
           hasChanges = true;
         }
         
         // 2. Replace tel: protocol links
         if (content.includes('tel:+441733853037')) {
-          content = content.replace(/tel:\+447341645339/g, 'tel:+441733853037');
+          content = content.replace(/tel:\+441733853037/g, 'tel:+448002465234');
           hasChanges = true;
         }
         if (content.includes('tel:01733853037')) {
-          content = content.replace(/tel:01733853037/g, 'tel:01733853037');
+          content = content.replace(/tel:01733853037/g, 'tel:08002465234');
           hasChanges = true;
         }
 
         // 3. Replace PHONE_TEL JS/TS declarations (keep whatsapp as mobile)
-        const phoneTelRegex = /PHONE_TEL\s*=\s*['"]\+447341645339['"]/g;
+        const phoneTelRegex = /PHONE_TEL\s*=\s*['"]\+441733853037['"]/g;
         if (phoneTelRegex.test(content)) {
           phoneTelRegex.lastIndex = 0;
-          content = content.replace(phoneTelRegex, "PHONE_TEL = '+441733853037'");
+          content = content.replace(phoneTelRegex, "PHONE_TEL = '+448002465234'");
           hasChanges = true;
         }
 

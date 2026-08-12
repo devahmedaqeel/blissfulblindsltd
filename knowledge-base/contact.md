@@ -4,8 +4,8 @@ source: index.html header/footer, LocalBusiness structured data
 ---
 
 ## Phone
-01733 853037 (UK) / +44 7341 645339 (international format)
-Tap-to-call links on the site use `tel:+441733853037`.
+0800 246 5234 (UK) / +44 7341 645339 (international format)
+Tap-to-call links on the site use `tel:+448002465234`.
 
 ## WhatsApp
 +44 7341 645339 — the site has a floating WhatsApp chat widget and footer icon linking

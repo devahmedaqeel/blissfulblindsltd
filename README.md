@@ -125,7 +125,7 @@ dev-tools/                 NOT part of the live site — nothing here is
 ## Business info baked into the code
 
 - Domain: `blissfulblindsltd.co.uk`
-- Phone: `01733 853037` (landline) / WhatsApp & mobile: `+44 7341 645339`
+- Phone: `0800 246 5234` (landline) / WhatsApp & mobile: `+44 7341 645339`
 - Email: `info@blissfulblindsltd.co.uk` (contact mailbox kept as-is —
   intentionally not switched to a domain-matched address, see project memory)
 - Address: 75 Ringwood Bretton, Peterborough, PE3 9SR

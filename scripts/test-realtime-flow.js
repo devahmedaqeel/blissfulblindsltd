@@ -36,7 +36,7 @@ async function run() {
   try {
     id = await recordEnquiry({
       source: 'booking', sourceLabel: 'Booking Request', name: 'Network Failure Test',
-      email: 'test@example.com', phone: '01733853037', pageUrl: 'https://blissfulblindsltd.co.uk/roller-blinds/'
+      email: 'test@example.com', phone: '08002465234', pageUrl: 'https://blissfulblindsltd.co.uk/roller-blinds/'
     });
   } catch (err) {
     threw = true;

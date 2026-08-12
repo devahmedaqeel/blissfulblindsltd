@@ -73,35 +73,35 @@ async function run() {
   });
   ok('accepts a fully valid booking submission', validBooking.valid, JSON.stringify(validBooking.errors));
 
-  const missingName = validateLeadSubmission({ source: 'booking', email: 'a@b.com', phone: '01733853037' });
+  const missingName = validateLeadSubmission({ source: 'booking', email: 'a@b.com', phone: '08002465234' });
   ok('rejects submission missing name', !missingName.valid && !!missingName.errors.name);
 
-  const badEmail = validateLeadSubmission({ source: 'booking', name: 'Jane', email: 'not-an-email', phone: '01733853037' });
+  const badEmail = validateLeadSubmission({ source: 'booking', name: 'Jane', email: 'not-an-email', phone: '08002465234' });
   ok('rejects invalid email address', !badEmail.valid && !!badEmail.errors.email);
 
   const badPhone = validateLeadSubmission({ source: 'booking', name: 'Jane', email: 'a@b.com', phone: 'abc' });
   ok('rejects invalid phone number', !badPhone.valid && !!badPhone.errors.phone);
 
-  const unknownSource = validateLeadSubmission({ source: 'not-a-real-source', name: 'Jane', email: 'a@b.com', phone: '01733853037' });
+  const unknownSource = validateLeadSubmission({ source: 'not-a-real-source', name: 'Jane', email: 'a@b.com', phone: '08002465234' });
   ok('rejects unknown submission source', !unknownSource.valid && !!unknownSource.errors.source);
 
   const xssName = validateLeadSubmission({
-    source: 'booking', name: '<script>alert(1)</script>Jane', email: 'a@b.com', phone: '01733853037'
+    source: 'booking', name: '<script>alert(1)</script>Jane', email: 'a@b.com', phone: '08002465234'
   });
   ok('strips HTML tags from name (XSS sanitization)', !xssName.valid, 'expect name-charset rejection after tag-stripping');
 
   console.log('\n[2] Spam prevention\n');
 
-  const honeypot = validateLeadSubmission({ source: 'booking', name: 'Bot', email: 'a@b.com', phone: '01733853037', website: 'http://spam.example' });
+  const honeypot = validateLeadSubmission({ source: 'booking', name: 'Bot', email: 'a@b.com', phone: '08002465234', website: 'http://spam.example' });
   ok('honeypot field triggers silent spam rejection', !honeypot.valid && honeypot.errors._spam === true);
 
   const tooFast = validateLeadSubmission({
-    source: 'booking', name: 'Jane', email: 'a@b.com', phone: '01733853037', renderedAt: Date.now()
+    source: 'booking', name: 'Jane', email: 'a@b.com', phone: '08002465234', renderedAt: Date.now()
   });
   ok('instant submission (0ms fill time) flagged as spam', !tooFast.valid && tooFast.errors._spam === true);
 
   const linkSpam = validateLeadSubmission({
-    source: 'booking', name: 'Jane', email: 'a@b.com', phone: '01733853037',
+    source: 'booking', name: 'Jane', email: 'a@b.com', phone: '08002465234',
     message: 'Check http://spam1.example and http://spam2.example and https://spam3.example'
   });
   ok('message with 2+ links flagged as spam', !linkSpam.valid && linkSpam.errors._spam === true);
@@ -109,7 +109,7 @@ async function run() {
   console.log('\n[3] Email templates render valid HTML\n');
 
   const admin = adminNotificationEmail({
-    source: 'booking', sourceLabel: 'Booking Request', name: 'Jane Doe', phone: '01733853037',
+    source: 'booking', sourceLabel: 'Booking Request', name: 'Jane Doe', phone: '08002465234',
     email: 'jane@example.com', address: '1 Test St', postcode: 'PE3 9SR', service: 'Roller Blinds',
     preferredColor: 'White', appointment: 'Afternoon', hearAboutUs: 'Google',
     message: 'Quote please', submittedAt: new Date().toLocaleString('en-GB')
@@ -136,7 +136,7 @@ async function run() {
   {
     const req = mockReq({
       body: {
-        source: 'booking', name: 'John Smith', email: 'john.smith@example.com', phone: '01733853037',
+        source: 'booking', name: 'John Smith', email: 'john.smith@example.com', phone: '08002465234',
         address: '10 Example Rd', postcode: 'PE3 9SR', service: 'Vertical Blinds', preferredColor: 'Grey',
         appointmentTime: 'Morning', hearAboutUs: 'Facebook', message: 'Please call after 5pm.',
         renderedAt: Date.now() - 4000
@@ -193,7 +193,7 @@ async function run() {
   {
     const req = mockReq({
       ip: '203.0.113.6',
-      body: { source: 'booking', name: 'Bot', email: 'a@b.com', phone: '01733853037', website: 'filled-by-bot' }
+      body: { source: 'booking', name: 'Bot', email: 'a@b.com', phone: '08002465234', website: 'filled-by-bot' }
     });
     const res = mockRes();
     await notifyHandler(req, res);
@@ -208,7 +208,7 @@ async function run() {
       const req = mockReq({
         ip,
         body: {
-          source: 'booking', name: 'Rate Test', email: 'rate@example.com', phone: '01733853037',
+          source: 'booking', name: 'Rate Test', email: 'rate@example.com', phone: '08002465234',
           renderedAt: Date.now() - 4000
         }
       });

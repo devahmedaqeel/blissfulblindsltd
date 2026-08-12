@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var note = document.createElement('p');
       note.className = 'booking-email-fallback-note';
       note.style.cssText = 'color: var(--text-muted, #94a3b8); font-size: 0.8125rem; margin-top: 12px;';
-      note.textContent = "If you don't hear from us within 24 hours, please call us on 01733 853037 to make sure we received your request.";
+      note.textContent = "If you don't hear from us within 24 hours, please call us on 0800 246 5234 to make sure we received your request.";
       successMessage.appendChild(note);
     });
   }
