@@ -602,6 +602,26 @@ document.addEventListener('DOMContentLoaded', () => {
           'Stanmore',
           'Wembley'
         ]
+      },
+      miltonkeynes: {
+        center: [52.0406, -0.7594],
+        zoom: 11,
+        circle: { center: [52.0406, -0.7594], radius: 16000 },
+        title: 'Milton Keynes Service Area',
+        cities: [
+          'Central Milton Keynes',
+          'Bletchley',
+          'Wolverton',
+          'Newport Pagnell',
+          'Stony Stratford',
+          'Olney',
+          'Woburn Sands',
+          'Shenley Church End',
+          'Great Linford',
+          'Westcroft',
+          'Bradwell',
+          'Kingston'
+        ]
       }
     };
 
@@ -623,7 +643,8 @@ document.addEventListener('DOMContentLoaded', () => {
       peterborough: document.getElementById('tab-peterborough'),
       leicester:    document.getElementById('tab-leicester'),
       luton:        document.getElementById('tab-luton'),
-      watford:      document.getElementById('tab-watford')
+      watford:      document.getElementById('tab-watford'),
+      miltonkeynes: document.getElementById('tab-miltonkeynes')
     };
 
     function renderRegion(regionKey) {
@@ -703,15 +724,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const postcodeMap = {
         peterborough: ['PE'],
         leicester:    ['LE'],
-        luton:        ['LU', 'MK', 'SG'],
-        watford:      ['WD', 'HA']
+        luton:        ['LU', 'SG'],
+        watford:      ['WD', 'HA'],
+        miltonkeynes: ['MK']
       };
 
       const checkPostcode = () => {
         const inputVal = postcodeCheckInput.value.trim().toUpperCase();
         if (!inputVal) {
           checkerResult.className = 'postcode-result error';
-          checkerResult.textContent = 'Please enter a postcode or postcode prefix (e.g. PE1, LE5, LU2, WD17).';
+          checkerResult.textContent = 'Please enter a postcode or postcode prefix (e.g. PE1, LE5, LU2, MK9, WD17).';
           return;
         }
 
@@ -762,6 +784,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (text === 'peterborough') targetKey = 'peterborough';
         else if (text === 'leicester')   targetKey = 'leicester';
         else if (text === 'luton')       targetKey = 'luton';
+        else if (text === 'watford')     targetKey = 'watford';
+        else if (text === 'milton keynes') targetKey = 'miltonkeynes';
         if (targetKey && activeRegion !== targetKey) {
           activeRegion = targetKey;
           Object.values(tabBtns).forEach(b => b && b.classList.remove('active'));

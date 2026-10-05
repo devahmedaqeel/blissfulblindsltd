@@ -1,6 +1,6 @@
 # Blissful Blinds
 
-> Blissful Blinds Ltd (Company No. 17329706) supplies and fits made-to-measure window blinds, shutters, and window coverings across Peterborough, Leicester, Luton, and Watford in the United Kingdom. The company brings the showroom to the customer's home with a free consultation, free measuring, and free professional fitting, backed by a price-match promise and a 1-year product guarantee.
+> Blissful Blinds Ltd (Company No. 17329706) supplies and fits made-to-measure window blinds, shutters, and window coverings across Peterborough, Leicester, Luton, Watford, and Milton Keynes in the United Kingdom. The company brings the showroom to the customer's home with a free consultation, free measuring, and free professional fitting, backed by a price-match promise and a 1-year product guarantee.
 
 ## Company
 
@@ -15,8 +15,9 @@
 
 - Peterborough area: Peterborough city centre, Stamford, Spalding, Wisbech, March, Whittlesey, Market Deeping, Oundle, Yaxley, Crowland (postcode prefix PE).
 - Leicester area: Leicester city centre, Loughborough, Hinckley, Wigston, Coalville, Melton Mowbray, Market Harborough, Oadby, Lutterworth, Ashby-de-la-Zouch (postcode prefix LE).
-- Luton area: Luton town centre, Dunstable, Leighton Buzzard, Houghton Regis, Ampthill, Flitwick, Sandy, Biggleswade, Kempston (postcode prefixes LU, MK, SG).
+- Luton area: Luton town centre, Dunstable, Leighton Buzzard, Houghton Regis, Ampthill, Flitwick, Sandy, Biggleswade, Kempston (postcode prefixes LU, SG).
 - Watford area: Watford, South Oxhey, Stanmore, Wembley (postcode prefixes WD, HA).
+- Milton Keynes area: Central Milton Keynes, Bletchley, Wolverton, Newport Pagnell, Stony Stratford, Olney, Woburn Sands, Shenley Church End, Great Linford, Westcroft, Bradwell, Kingston (postcode prefix MK).
 
 ## Products
 
