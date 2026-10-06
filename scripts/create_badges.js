@@ -1,0 +1,96 @@
+const fs = require('fs');
+
+// Google Reviews Badge SVG
+const googleSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" width="210" height="64">
+  <defs>
+    <filter id="card-shadow" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- White Card Pill Background -->
+  <rect x="2" y="2" width="206" height="60" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" filter="url(#card-shadow)"/>
+  
+  <!-- Official 4-color Google 'G' Icon -->
+  <g transform="translate(14, 14)">
+    <svg width="36" height="36" viewBox="0 0 48 48">
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.55 13.23l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+      <path fill="#FBBC05" d="M10.53 28.58c-.48-1.45-.76-2.99-.76-4.58s.28-3.13.76-4.58l-7.98-6.19C.92 16.46 0 20.12 0 24s.92 7.54 2.55 10.77l7.98-6.19z"/>
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+    </svg>
+  </g>
+  
+  <!-- Google Multi-color Wordmark -->
+  <text x="60" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Google Sans', 'Product Sans', Roboto, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.2">
+    <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+  </text>
+  
+  <!-- Reviews Label -->
+  <text x="60" y="47" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" font-weight="600" fill="#3C4043">Reviews</text>
+  
+  <!-- 5 Gold Stars -->
+  <g transform="translate(112, 36) scale(0.75)" fill="#FBBC05">
+    <!-- Star 1 -->
+    <path d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 2 -->
+    <path transform="translate(22, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 3 -->
+    <path transform="translate(44, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 4 -->
+    <path transform="translate(66, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 5 -->
+    <path transform="translate(88, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+  </g>
+</svg>`;
+
+// Facebook Reviews Badge SVG
+const facebookSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" width="210" height="64">
+  <defs>
+    <filter id="fb-shadow" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- White Card Pill Background -->
+  <rect x="2" y="2" width="206" height="60" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" filter="url(#fb-shadow)"/>
+  
+  <!-- Official Facebook Blue Circle 'f' Icon -->
+  <g transform="translate(14, 14)">
+    <svg width="36" height="36" viewBox="0 0 36 36">
+      <circle cx="18" cy="18" r="18" fill="#1877F2"/>
+      <path fill="#FFFFFF" d="M25 18h-4.3v13.5h-5.6V18H12v-4.8h3.1v-3.1c0-4.1 2.5-6.3 6.2-6.3 1.8 0 3.3.1 3.8.2v4.4h-2.6c-2 0-2.4 1-2.4 2.4v2.4H25l-.8 4.8z"/>
+    </svg>
+  </g>
+  
+  <!-- Facebook Official Blue Wordmark -->
+  <text x="60" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#1877F2" letter-spacing="-0.3">
+    facebook
+  </text>
+  
+  <!-- Reviews Label -->
+  <text x="60" y="47" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" font-weight="600" fill="#3C4043">Reviews</text>
+  
+  <!-- 5 Gold Stars -->
+  <g transform="translate(112, 36) scale(0.75)" fill="#FBBC05">
+    <!-- Star 1 -->
+    <path d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 2 -->
+    <path transform="translate(22, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 3 -->
+    <path transform="translate(44, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 4 -->
+    <path transform="translate(66, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+    <!-- Star 5 -->
+    <path transform="translate(88, 0)" d="M10 1 L12.9 7.2 L19.8 8 L14.7 12.8 L16.1 19.6 L10 16.2 L3.9 19.6 L5.3 12.8 L0.2 8 L7.1 7.2 Z"/>
+  </g>
+</svg>`;
+
+fs.writeFileSync('images/google-reviews-badge.svg', googleSvg);
+fs.writeFileSync('images/facebook-reviews-badge.svg', facebookSvg);
+
+// Also copy to public/images if it exists
+if (fs.existsSync('public/images')) {
+  fs.writeFileSync('public/images/google-reviews-badge.svg', googleSvg);
+  fs.writeFileSync('public/images/facebook-reviews-badge.svg', facebookSvg);
+}
+
+console.log('Badges created successfully!');
