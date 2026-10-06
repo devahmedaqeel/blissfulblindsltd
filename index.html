@@ -266,10 +266,6 @@
   <!-- Modern Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3.0">
 
-  <!-- AI Sales & Support Assistant (chat widget) — self-contained, loaded
-       lazily after the page is interactive; see chatbot.js -->
-  <link rel="preload" href="chatbot.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="chatbot.css"></noscript>
 
   <!-- Google Fonts — preconnected + loaded as a real <link> instead of
        a CSS @import in styles.css, which is render-blocking and was
@@ -1840,6 +1836,17 @@
     </div>
   </footer>
 
+  <!-- Professional Floating "Get a Free Quote" CTA -->
+  <a href="#booking" id="floatingQuoteCta" class="floating-quote-cta" aria-label="Get a Free Quote - Book In-Home Consultation">
+    <span class="floating-quote-icon">
+      <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+    </span>
+    <span class="floating-quote-text">Get a Free Quote</span>
+    <span class="floating-quote-arrow">
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </span>
+  </a>
+
   <!-- Floating WhatsApp Chat Widget -->
   <div class="wa-chat-widget" id="waChatWidget">
     <div class="wa-chat-bubble">
@@ -1859,12 +1866,6 @@
   <!-- Modern JS Script -->
   <script src="app.js"></script>
 
-  <!-- AI Sales & Support Assistant (chat widget) — self-contained; builds
-       its own UI inside this container once the page is interactive.
-       Safe to remove: delete this div plus the 3 tags that load it. -->
-  <div id="bb-chatbot-root"></div>
-  <script src="chatbot-kb.js" defer></script>
-  <script src="chatbot.js" defer></script>
 
 
 </body>

@@ -1086,6 +1086,56 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObserver.observe(el));
   }
 
+  // 13. Floating "Get a Free Quote" CTA with Smart Hide/Show
+  function initFloatingQuoteCta() {
+    const floatingCta = document.getElementById('floatingQuoteCta');
+    const bookingSec = document.getElementById('booking');
+    if (!floatingCta || !bookingSec) return;
+
+    let bookingInView = false;
+
+    // Smart visibility observer: automatically hide CTA when booking form is in view
+    if ('IntersectionObserver' in window) {
+      const bookingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          bookingInView = entry.isIntersecting;
+          syncCtaVisibility();
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -40px 0px'
+      });
+      bookingObserver.observe(bookingSec);
+    }
+
+    function syncCtaVisibility() {
+      // Show when visitor has scrolled past initial hero (250px) AND booking form is NOT in view
+      const scrolledPastHero = window.scrollY > 250;
+      if (scrolledPastHero && !bookingInView) {
+        floatingCta.classList.add('is-visible');
+      } else {
+        floatingCta.classList.remove('is-visible');
+      }
+    }
+
+    window.addEventListener('scroll', syncCtaVisibility, { passive: true });
+    syncCtaVisibility();
+
+    // Smooth scroll directly to booking form on click/tap
+    floatingCta.addEventListener('click', (e) => {
+      e.preventDefault();
+      bookingSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        const nameInput = document.getElementById('name');
+        if (nameInput) {
+          nameInput.focus({ preventScroll: true });
+        }
+      }, 750);
+    });
+  }
+
   initScrollReveal();
+  initFloatingQuoteCta();
   makeFreelyDraggable(document.getElementById('waChatWidget'), 'bb_wa_widget_pos');
 });
+
