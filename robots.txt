@@ -5,4 +5,4 @@ Disallow: /old-static-html/
 Disallow: /api/
 Disallow: /admin/
 
-Sitemap: https://blissfulblindsltd.co.uk/sitemap.xml
+Sitemap: https://www.blissfulblindsltd.co.uk/sitemap.xml
