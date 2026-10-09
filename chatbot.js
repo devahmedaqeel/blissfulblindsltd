@@ -292,10 +292,11 @@
   // Pricing policy response (mirrors knowledge-base/pricing-policy.md)
   // ---------------------------------------------------------------------
   var OFFER_TABLE = [
-    { keys: ['4 vertical', 'vertical.*4', '4.*vertical'], html: '<strong>4 Vertical Blinds Package</strong> — &pound;199 / 4 windows. Includes measuring, fitting &amp; a 1-year guarantee. T&amp;Cs apply.' },
-    { keys: ['4 roller', 'roller.*4', '4.*roller'], html: '<strong>4 Roller Blinds</strong> — from &pound;239 / 4 windows. Includes measuring, fitting &amp; child-safe operation. T&amp;Cs apply.' },
-    { keys: ['full house', '6 window', 'whole house', 'entire house'], html: '<strong>Full House Vertical Blinds</strong> — &pound;299 for up to 6 windows. T&amp;Cs apply.' },
-    { keys: ['conservatory'], html: '<strong>Conservatory Vertical Blinds</strong> — &pound;349 complete fitting. T&amp;Cs apply.' },
+    { keys: ['3 vertical', 'vertical.*3', '3.*vertical'], html: '<strong>3 Vertical Blinds Package</strong> — &pound;89 / 3 windows. Includes measuring, fitting &amp; a 1-year guarantee. T&amp;Cs apply.' },
+    { keys: ['3 roller', 'roller.*3', '3.*roller'], html: '<strong>3 Roller Blinds</strong> — &pound;119 / 3 windows. Includes measuring, fitting &amp; child-safe operation. T&amp;Cs apply.' },
+    { keys: ['full house', '6 window', 'whole house', 'entire house'], html: '<strong>Full House Vertical Blinds</strong> — from &pound;299 for up to 6 windows. T&amp;Cs apply.' },
+    { keys: ['conservatory'], html: '<strong>Conservatory Vertical Blinds</strong> — from &pound;349 complete fitting. T&amp;Cs apply.' },
+    { keys: ['venetian'], html: '<strong>Venetian Blinds</strong> — from &pound;99. Includes measuring &amp; fitting. T&amp;Cs apply.' },
     { keys: ['venetian', 'vision', 'roman', 'skylight', 'shutter'], html: '<strong>25% OFF</strong> selected Venetian, Vision Day &amp; Night, Roman, Skylight and Shutter blinds.' }
   ];
 
