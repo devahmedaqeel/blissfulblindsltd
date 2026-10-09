@@ -378,7 +378,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const website = document.getElementById('website') ? document.getElementById('website').value.trim() : '';
       const renderedAt = renderedAtField ? renderedAtField.value : '';
 
-      if (!name || !email || !phone || !postcode || !address || !blindsType || !callTime || !hearAboutUs) {
+      // Fields that only exist on the full booking form (not the shorter
+      // contact-page form) are required only when present on the page.
+      const filledIfPresent = (id, value) => !document.getElementById(id) || value;
+      if (!name || !email || !phone || !postcode || !address || !filledIfPresent('blindsType', blindsType) || !filledIfPresent('callTime', callTime) || !filledIfPresent('hearAboutUs', hearAboutUs)) {
         alert('Please fill out all required fields.');
         return;
       }
